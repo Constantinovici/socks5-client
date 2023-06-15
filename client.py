@@ -137,12 +137,8 @@ class Socks5_Client:
         self.connect()
         self.socks5_handshake()
         self.socks5_subnegotiation()
-        
-        while 1:
-            self.socks5_udp_procedure()
-            time.sleep(5)
+        self.socks5_udp_procedure()
     
-
 if __name__ == '__main__':
 
     if len(sys.argv) != 3:
