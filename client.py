@@ -3,6 +3,8 @@ import struct
 import time
 import sys
 
+# Author: Constantinovici
+
 class Socks5_Client:
     def __init__(self, proxy_ip, proxy_port):
         self.proxy_ip = proxy_ip
