@@ -119,25 +119,9 @@ class Socks5_Client:
         if atype != 0x01:
             print("Recived invalid ATYPE in subnegotiation. I have to deal only with IPV4")
             sys.exit(0)
-
-        
+		
         self.internal_ip_bytes = recv_buffer[4:8]
         self.internal_port_bytes = recv_buffer[8:10]
-        
-		# Convert bytes ip to dotted ip
-        # proxy_intern_address = socket.inet_ntoa(self.internal_ip_bytes)
-
-        # Convert bytes into network decimal 
-        # intern_network_order_port = int.from_bytes(self.internal_port_bytes)
-
-        # Convert the network-order decimal to host order decimal
-        # proxy_intern_port = socket.ntohs(intern_network_order_port)
-
-        # print("recv->buff", list(recv_buffer))
-        # print(proxy_intern_address)
-        # print(proxy_intern_port)
-        # print(f"Internal IP:{proxy_intern_address}: PORT:{proxy_intern_port}")
-        # print("Subnegociation successfully.")
 
     def socks5_udp_procedure(self):
         buffer = b''
